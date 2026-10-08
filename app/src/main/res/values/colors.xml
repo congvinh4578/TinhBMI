@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Bảng màu chính (giao diện SÁNG) -->
+    <color name="xanh_chinh">#2563EB</color>
+    <color name="xanh_dam">#1E3A8A</color>
+    <color name="xanh_nhat">#DBEAFE</color>
+    <color name="mau_nhan_manh">#2563EB</color>
+    <color name="chu_nhan_gia_tri">#1E3A8A</color>
+
+    <!-- Nền và chữ -->
+    <color name="nen_man_hinh">#F3F6FB</color>
+    <color name="nen_the">#FFFFFF</color>
+    <color name="nen_o_nhap">#F1F5F9</color>
+    <color name="chu_dam">#0F172A</color>
+    <color name="chu_phu">#64748B</color>
+    <color name="duong_phan_cach">#E2E8F0</color>
+
+    <!-- Màu cố định (không đổi theo giao diện sáng/tối) -->
+    <color name="trang">#FFFFFF</color>
+    <color name="trang_mo">#CCFFFFFF</color>
+    <color name="nen_kinh_mo">#26FFFFFF</color>
+    <color name="hieu_ung_nhan">#33FFFFFF</color>
+    <color name="hieu_ung_nhan_manh">#333B82F6</color>
+    <color name="chu_tren_nen_vang">#1F2937</color>
+
+    <!-- Màu kết quả BMI -->
+    <color name="mau_gay">#FACC15</color>
+    <color name="mau_binh_thuong">#16A34A</color>
+    <color name="mau_thua_can">#F97316</color>
+    <color name="mau_beo_phi">#DC2626</color>
+
+    <!-- Giữ lại các màu mặc định của template cũ để theme mặc định không báo lỗi -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+</resources>

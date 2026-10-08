@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Khung ngoài trong suốt, bên trong là một thẻ bo góc -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/nen_the"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đánh giá ứng dụng"
+                android:textColor="@color/chu_dam"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Chia sẻ cảm nhận để ứng dụng ngày càng tốt hơn"
+                android:textColor="@color/chu_phu"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/nhap_ho_ten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/nen_o_nhap"
+                android:hint="Họ và tên của bạn"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1"
+                android:padding="14dp"
+                android:textColor="@color/chu_dam"
+                android:textColorHint="@color/chu_phu"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/nhap_danh_gia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/nen_o_nhap"
+                android:gravity="top|start"
+                android:hint="Nội dung đánh giá, góp ý..."
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="6"
+                android:minLines="3"
+                android:padding="14dp"
+                android:textColor="@color/chu_dam"
+                android:textColorHint="@color/chu_phu"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/nut_gui_danh_gia"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/nen_nut_tinh_toan"
+                android:backgroundTint="@null"
+                android:stateListAnimator="@null"
+                android:text="GỬI ĐÁNH GIÁ"
+                android:textAllCaps="false"
+                android:textColor="@color/trang"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bo_cuc_goc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nen_man_hinh"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <!-- ===== TIÊU ĐỀ: tên ứng dụng + nút đổi giao diện + nút menu 3 sọc ===== -->
+    <LinearLayout
+        android:id="@+id/khu_vuc_tieu_de"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nen_tieu_de"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="28dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nhan_tieu_de"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Máy Tính BMI"
+                android:textColor="@color/trang"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nhan_phu_de"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Chọn chiều cao và cân nặng của bạn"
+                android:textColor="@color/trang_mo"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/nut_doi_giao_dien"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/nen_nut_tron"
+            android:contentDescription="Đổi giao diện sáng hoặc tối"
+            android:padding="11dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bieu_tuong_mat_trang" />
+
+        <ImageButton
+            android:id="@+id/nut_menu_ba_soc"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/nen_nut_tron"
+            android:contentDescription="Mở menu"
+            android:padding="11dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bieu_tuong_menu_ba_soc" />
+    </LinearLayout>
+
+    <!-- ===== NỘI DUNG CHÍNH ===== -->
+    <ScrollView
+        android:id="@+id/cuon_noi_dung"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Thẻ chiều cao -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/the_chieu_cao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/nen_the"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Chiều cao"
+                            android:textColor="@color/chu_dam"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/nhan_gia_tri_chieu_cao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/nen_gia_tri"
+                            android:paddingStart="14dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="14dp"
+                            android:paddingBottom="6dp"
+                            android:text="165 cm"
+                            android:textColor="@color/chu_nhan_gia_tri"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/thanh_truot_chieu_cao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:max="120"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:progress="65"
+                        android:progressBackgroundTint="@color/duong_phan_cach"
+                        android:progressTint="@color/mau_nhan_manh"
+                        android:thumbTint="@color/mau_nhan_manh" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="100 cm"
+                            android:textColor="@color/chu_phu"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="220 cm"
+                            android:textColor="@color/chu_phu"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Thẻ cân nặng -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/the_can_nang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/nen_the"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cân nặng"
+                            android:textColor="@color/chu_dam"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/nhan_gia_tri_can_nang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/nen_gia_tri"
+                            android:paddingStart="14dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="14dp"
+                            android:paddingBottom="6dp"
+                            android:text="60 kg"
+                            android:textColor="@color/chu_nhan_gia_tri"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/thanh_truot_can_nang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:max="170"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:progress="30"
+                        android:progressBackgroundTint="@color/duong_phan_cach"
+                        android:progressTint="@color/mau_nhan_manh"
+                        android:thumbTint="@color/mau_nhan_manh" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="30 kg"
+                            android:textColor="@color/chu_phu"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="200 kg"
+                            android:textColor="@color/chu_phu"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Thẻ giới tính và tuổi -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/the_gioi_tinh_tuoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/nen_the"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Dòng giới tính -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Giới tính"
+                            android:textColor="@color/chu_dam"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/nhom_gioi_tinh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/nut_nam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/mau_nhan_manh"
+                                android:checked="true"
+                                android:text="Nam"
+                                android:textColor="@color/chu_dam"
+                                android:textSize="16sp" />
+
+                            <RadioButton
+                                android:id="@+id/nut_nu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:buttonTint="@color/mau_nhan_manh"
+                                android:text="Nữ"
+                                android:textColor="@color/chu_dam"
+                                android:textSize="16sp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <!-- Dòng tuổi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Tuổi"
+                            android:textColor="@color/chu_dam"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/nhap_tuoi"
+                            android:layout_width="96dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/nen_o_nhap"
+                            android:gravity="center"
+                            android:hint="Tuổi"
+                            android:imeOptions="actionDone"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:padding="12dp"
+                            android:selectAllOnFocus="true"
+                            android:text="22"
+                            android:textColor="@color/chu_dam"
+                            android:textColorHint="@color/chu_phu"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Nút tính toán -->
+            <Button
+                android:id="@+id/nut_tinh_bmi"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_margin="4dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/nen_nut_tinh_toan"
+                android:backgroundTint="@null"
+                android:elevation="4dp"
+                android:stateListAnimator="@null"
+                android:text="TÍNH CHỈ SỐ BMI"
+                android:textAllCaps="false"
+                android:textColor="@color/trang"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Vòng xoay tải: chỉ hiện trong 2,5 giây khi đang tính -->
+            <ProgressBar
+                android:id="@+id/vong_xoay_tai"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/mau_nhan_manh"
+                android:visibility="gone" />
+
+            <!-- Thẻ kết quả gọn: chỉ có 4 thứ (ẩn cho tới khi bấm tính) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/the_ket_qua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginTop="18dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/nen_the"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- 1. Chỉ số BMI -->
+                    <TextView
+                        android:id="@+id/nhan_chi_so_bmi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0,0"
+                        android:textColor="@color/mau_binh_thuong"
+                        android:textSize="64sp"
+                        android:textStyle="bold" />
+
+                    <!-- 2. Nhãn phân loại -->
+                    <TextView
+                        android:id="@+id/nhan_phan_loai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/nen_nhan_phan_loai"
+                        android:paddingStart="22dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="22dp"
+                        android:paddingBottom="8dp"
+                        android:text="Bình thường"
+                        android:textColor="@color/trang"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- 3. Dòng cân nặng lý tưởng -->
+                    <TextView
+                        android:id="@+id/nhan_can_nang_ly_tuong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:background="@drawable/nen_gia_tri"
+                        android:gravity="center"
+                        android:paddingStart="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="10dp"
+                        android:text="Cân nặng lý tưởng"
+                        android:textColor="@color/chu_nhan_gia_tri"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <!-- 4. Nút mở lời khuyên chi tiết -->
+                    <Button
+                        android:id="@+id/nut_xem_chi_tiet_loi_khuyen"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/nen_nut_phu"
+                        android:backgroundTint="@null"
+                        android:stateListAnimator="@null"
+                        android:text="💡 Xem lời khuyên chi tiết"
+                        android:textAllCaps="false"
+                        android:textColor="@color/mau_nhan_manh"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
